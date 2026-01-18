@@ -1,0 +1,305 @@
+:root {
+  --primary-color: #f6f6f7;
+  --primary-bg: #222222;
+  --light-color: #f6f3f4;
+  --theme-color: #4f39f6;
+  --theme-hover-color: #432dd7;
+  --alert-color: #c0392b;
+  --success-color: #27ae60;
+  --color-white: #fff;
+
+  /** Logo color **/
+  --logo-color-purple: #b047ff;
+  --logo-color-blue: #9499ff;
+
+  --input-height: 40px;
+  --input-width: 250px;
+  --br-radius: 5px;
+  --padding: 5px;
+
+  /** Font size **/
+  --fs-small: 0.8em;
+  --fs-normal: 1em;
+  --fs-medium: 1.3em;
+  --fs-large: 1.6em;
+  --fs-xlarge: 2.4em;
+
+  /** Device breakpoints **/
+  --desktop-width: 1336px;
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+
+  color: var(--primary-color);
+  background: url("./assets/noise.png");
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/** Google Fonts **/
+.playfair-display-bold {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+.inter-400 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/** HTML Element selectors **/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  font-weight: 500;
+  color: var(--theme-color);
+  text-decoration: inherit;
+  transition: all 0.25s;
+}
+a:hover {
+  color: var(--theme-hover-color);
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+h1 {
+  line-height: 1.1;
+}
+header {
+  background: var(--primary-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  padding: var(--padding);
+}
+button {
+  background: linear-gradient(#2e2e2e 0%, #222 100%);
+  border: 1px solid #141414;
+  box-shadow:
+    0 1px 2px #0003,
+    inset 0 1px #fff3;
+  border-radius: var(--br-radius);
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  font-family: inherit;
+  transition: all 0.25s;
+}
+button:hover {
+  background: linear-gradient(#2e2e2e 0%, #2e2e2e 100%);
+}
+button:active,
+button.active {
+  background: linear-gradient(#222 0%, #2e2e2e 100%);
+  box-shadow:
+    0 1px 2px #fff3,
+    inset 0 1px #0003;
+}
+button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+input[type="checkbox"] {
+  /* Hide default appearance (browser dependent) */
+  -webkit-appearance: none; /* For Webkit browsers */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none;
+
+  /* Basic styling for the box */
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--light-color);
+  border-radius: var(--br-radius);
+  background-color: var(--theme-light-color);
+  cursor: pointer;
+  position: relative; /* Needed for pseudo-elements */
+}
+
+/* Style the checkmark when checked */
+input[type="checkbox"]:checked {
+  background-color: var(--theme-color);
+  border-color: var(--theme-color);
+}
+
+/* Create the checkmark icon using a pseudo-element */
+input[type="checkbox"]:checked::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/** Flex Utilities **/
+.d-flex {
+  display: flex;
+}
+.d-column {
+  flex-direction: column;
+}
+.d-wrap {
+  flex-wrap: wrap;
+}
+.d-x-center {
+  justify-content: center;
+}
+.d-x-between {
+  justify-content: space-between;
+}
+.d-y-start {
+  align-items: start;
+}
+.d-y-center {
+  align-items: center;
+}
+.col-gap-x {
+  column-gap: 1.5em;
+}
+.row-gap-4x {
+  row-gap: 4em;
+}
+/** Margin Utilities **/
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.ml-5 {
+  margin-left: 5px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.mr-5 {
+  margin-right: 5px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+/** Padding Utilities **/
+.p-5 {
+  padding: 5px;
+}
+.pl-5 {
+  padding-left: 5px;
+}
+.pr-5 {
+  padding-right: 5px;
+}
+.p-10 {
+  padding: 10px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+/** Color Utilities **/
+.c-light {
+  color: var(--light-color);
+}
+.c-alert {
+  color: var(--alert-color);
+}
+.c-success {
+  color: var(--success-color);
+}
+/** Miscellaneous **/
+.d-none {
+  display: none;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.p-absolute {
+  position: absolute;
+}
+/** Text Utilities **/
+.t-strike {
+  text-decoration: line-through;
+}
+.t-center {
+  text-align: center;
+}
+/** Font size Utilities **/
+.fs-normal {
+  font-size: var(--fs-normal);
+}
+.fs-small {
+  font-size: var(--fs-small);
+}
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+.fs-large {
+  font-size: var(--fs-large);
+}
+.fs-xlarge {
+  font-size: var(--fs-xlarge);
+}
+/** Fonts **/
+.f-bold {
+  font-weight: bold;
+}
+
+/** Component Styles **/
+#root {
+  min-height: inherit;
+}
+.component-wrapper {
+  width: var(--desktop-width);
+  margin: 0 auto;
+}
+.card {
+  border: 1px solid var(--primary-color);
+  border-radius: 0.35em;
+  background: var(--primary-bg);
+  padding: 1em;
+}
+.highlight {
+  color: var(--theme-color);
+  text-decoration: 3px underline var(--logo-color-purple);
+}
