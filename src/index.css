@@ -8,9 +8,8 @@
   --success-color: #27ae60;
   --color-white: #fff;
 
-  /** Logo color **/
-  --logo-color-purple: #b047ff;
-  --logo-color-blue: #9499ff;
+  /** Border styles **/
+  --primary-border: 1px solid #141414;
 
   --input-height: 40px;
   --input-width: 250px;
@@ -50,6 +49,12 @@
   font-style: normal;
   letter-spacing: -0.02em;
 }
+.playfair-display-500 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 .inter-400 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -88,7 +93,7 @@ header {
 }
 button {
   background: linear-gradient(#2e2e2e 0%, #222 100%);
-  border: 1px solid #141414;
+  border: var(--primary-border);
   box-shadow:
     0 1px 2px #0003,
     inset 0 1px #fff3;
@@ -153,6 +158,9 @@ input[type="checkbox"]:checked::before {
 /** Flex Utilities **/
 .d-flex {
   display: flex;
+}
+.d-flex-1 {
+  flex: 1;
 }
 .d-column {
   flex-direction: column;
@@ -294,12 +302,30 @@ input[type="checkbox"]:checked::before {
   margin: 0 auto;
 }
 .card {
-  border: 1px solid var(--primary-color);
-  border-radius: 0.35em;
   background: var(--primary-bg);
-  padding: 1em;
+  border: var(--primary-border);
+  border-radius: var(--br-radius);
+  width: 48%;
+  min-height: 350px;
+}
+.card-img > img {
+  width: 250px;
 }
 .highlight {
   color: var(--theme-color);
   text-decoration: 3px underline var(--logo-color-purple);
+}
+/** Popularity Bar **/
+.popularity-container {
+  height: 25px;
+  width: 50px;
+}
+.popularity-bar {
+  border: var(--primary-border);
+  height: 100%;
+  margin-right: 2px;
+  width: 10px;
+}
+.popularity-bar.filled {
+  background: var(--success-color);
 }
