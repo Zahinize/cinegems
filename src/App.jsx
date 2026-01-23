@@ -1,7 +1,5 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-// import "./App.css";
+import logo from "./assets/logo-white.png";
 import PopularityBar from "./components/PopularityBar/PopularityBar";
 
 function App() {
@@ -10,21 +8,44 @@ function App() {
   return (
     <main className="root-container d-flex d-column">
       <header className="d-flex d-x-center d-y-center mb-30">
-        <h1 className="playfair-display-bold t-center fs-xlarge sm">
-          🎥 CineGems
-        </h1>
+        <div className="component-wrapper d-flex d-x-between d-y-center">
+          <h1 className="playfair-display-bold d-flex d-x-center d-y-center fs-xlarge sm">
+            <img
+              src={logo}
+              width="40"
+              height="40"
+              alt="CineGems Logo"
+              className="mr-5"
+            />
+            CineGems
+          </h1>
+          <nav>
+            <ul className="d-flex nav-links">
+              <li className="nav-link c-pointer fs-normal f-bold sm mr-20">
+                Movies
+              </li>
+              <li className="nav-link c-pointer fs-normal sm mr-20">My List</li>
+              <li className="nav-link c-pointer disabled fs-normal sm mr-20">
+                TV Shows
+              </li>
+              <li className="nav-link c-pointer disabled fs-normal sm">
+                Songs
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
-      <p className="t-center fs-large sm pl-10 mb-20">
-        Discover the best movies and tv shows.
-      </p>
       <div className="component-wrapper">
+        <p className="fs-large sm mb-30">
+          Discover the best movies and tv shows.
+        </p>
         <div className="d-flex mb-20">
-          <button className="btn active fs-normal sm mr-20">Movies</button>
+          <button className="btn active fs-normal sm mr-20">Popularity</button>
           <button disabled className="btn fs-normal sm mr-20">
-            TV Shows
+            Release Date
           </button>
           <button disabled className="btn fs-normal sm mr-20">
-            Songs
+            Genres
           </button>
         </div>
         <div className="d-flex d-wrap mb-20">

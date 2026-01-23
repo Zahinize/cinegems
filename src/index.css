@@ -115,10 +115,6 @@ button.active {
     0 1px 2px #fff3,
     inset 0 1px #0003;
 }
-button[disabled] {
-  opacity: 0.5;
-  pointer-events: none;
-}
 input[type="checkbox"] {
   /* Hide default appearance (browser dependent) */
   -webkit-appearance: none; /* For Webkit browsers */
@@ -170,6 +166,9 @@ input[type="checkbox"]:checked::before {
 }
 .d-x-center {
   justify-content: center;
+}
+.d-x-end {
+  justify-content: flex-end;
 }
 .d-x-between {
   justify-content: space-between;
@@ -259,6 +258,11 @@ input[type="checkbox"]:checked::before {
 .d-none {
   display: none;
 }
+.disabled,
+button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .c-pointer {
   cursor: pointer;
 }
@@ -328,4 +332,7 @@ input[type="checkbox"]:checked::before {
 }
 .popularity-bar.filled {
   background: var(--success-color);
+}
+.nav-links {
+  list-style: none;
 }
